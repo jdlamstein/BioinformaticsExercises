@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "stockilate"
+name = "bioinformaticsexercises"
 version = "0.1.0"
 description = ""
 authors = ["Josh Lamstein <jdlamstein@gmail.com>"]
@@ -7,9 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "3.13.2"
-yfinance = "0.2.54"
 seaborn = "0.13.2"
-finviz-platform = {git = "https://github.com/mariostoev/finviz.git"}
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.2.0"

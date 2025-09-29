@@ -1,6 +1,6 @@
-import os
-
-
+"""
+Count k-mers in DNA.
+"""
 
 def patternCount(f):
     with open(f) as file:
