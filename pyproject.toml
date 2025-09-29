@@ -10,7 +10,7 @@ python = "3.13.2"
 seaborn = "0.13.2"
 
 [tool.poetry.group.dev.dependencies]
-black = "^24.2.0"
+black = "^25.9.0"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
