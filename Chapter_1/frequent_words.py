@@ -2,6 +2,8 @@
 Count the maximum occurence of k-mers in the nucleotides.
 """
 
+from tqdm import tqdm
+
 
 def frequent_words(f: str):
     frequency_patterns = []
@@ -40,7 +42,66 @@ def max_map(freq_map: dict[str, int]):
     return max_val
 
 
+"""
+FindClumps(Text, k, L, t)
+    Patterns ← an array of strings of length 0
+    n ← |Text|
+    for every integer i between 0 and n − L
+        Window ← Text(i, L)
+        freqMap ← FrequencyTable(Window, k)
+        for every key s in freqMap
+            if freqMap[s] ≥ t
+                append s to Patterns
+    remove duplicates from Patterns
+    return Patterns
+    """
+
+
+def find_clumps(f, k=None, ell=None, t=None):
+    with open(f) as file:
+        data = file.read()
+        print(data)
+        if k is None:
+            txt, digits = data.strip().split("\n")
+            k, ell, t = digits.split(" ")
+            k = int(k)
+            ell = int(ell)
+            t = int(t)
+        else:
+            txt = data.strip()
+        patterns = set()
+        n = len(txt)
+        window = txt[:ell]
+        freq_map = {}
+
+        for i in tqdm(range(n - ell)):
+            if i > 0:
+                window[1:] + txt[i + ell - 1]
+                assert len(window) == ell
+
+                n = len(txt)
+
+                for j in range(ell - k):
+                    pttern = txt[j : j + k]
+                    if pttern not in freq_map:
+                        freq_map[pttern] = 1
+                    else:
+                        freq_map[pttern] += 1
+
+            for s in freq_map.keys():
+                if freq_map[s] >= t:
+                    patterns.add(s)
+    res = list(patterns)
+    print(f"Count: {len(res)}")
+    result = " ".join(res)
+    print(f"answer: {result}")
+    return result
+
+
 if __name__ == "__main__":
     # f = "/Users/gandalf/Code/BioinformaticsExercises/Data/frequent_words.txt"
     g = "/Users/gandalf/Downloads/dataset_30272_13.txt"
-    frequent_words(g)
+    f = "/Users/gandalf/Downloads/dataset_30274_5.txt"
+    f = "/Users/gandalf/Downloads/E_coli.txt"
+
+    find_clumps(f, k=9, ell=500, t=3)
