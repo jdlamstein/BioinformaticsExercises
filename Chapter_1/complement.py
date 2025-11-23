@@ -13,5 +13,5 @@ def get_complement(f: str):
 
 
 f = "/Users/gandalf/Downloads/dataset_30273_2.txt"
-
-get_complement(f)
+h = "Data/complement.txt"
+get_complement(h)

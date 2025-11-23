@@ -23,5 +23,7 @@ def patternMatch(f, pattern=None):
 
 # f = "/Users/gandalf/Downloads/dataset_30273_5.txt"
 f = "/Users/gandalf/Downloads/Vibrio_cholerae.txt"
+g = "Data/pattern.txt"
 # g = "/Users/gandalf/Downloads/PatternCount/inputs/input_1.txt"
-patternMatch(f, pattern="CTTGATCAT")
+# patternMatch(f, pattern="CTTGATCAT")
+patternMatch(g, pattern="AA")

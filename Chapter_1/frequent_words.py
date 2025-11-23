@@ -14,6 +14,7 @@ def frequent_words(f: str):
         txt, k_str = data.strip().split("\n")
         k = int(k_str)
         freq_map = frequency_table(txt, k)
+        print(freq_map)
         max_val = max_map(freq_map)
         for pattern, cnt in freq_map.items():
             if cnt == max_val:
@@ -113,5 +114,6 @@ if __name__ == "__main__":
     g = "/Users/gandalf/Downloads/dataset_30272_13.txt"
     f = "/Users/gandalf/Downloads/dataset_30274_5.txt"
     f = "/Users/gandalf/Downloads/E_coli.txt"
-
-    find_clumps(f, k=9, ell=500, t=3)
+    h = "Data/genome.txt"
+    frequent_words(h)
+    # find_clumps(f, k=9, ell=500, t=3)
