@@ -4,6 +4,10 @@ version = "0.1.0"
 description = ""
 authors = ["Josh Lamstein <jdlamstein@gmail.com>"]
 readme = "README.md"
+packages = [
+    { include = "Chapter_1" },
+    { include = "Chapter_2" }
+]
 
 [tool.poetry.dependencies]
 python = "3.13.2"

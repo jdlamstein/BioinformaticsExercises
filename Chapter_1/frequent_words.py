@@ -5,20 +5,20 @@ Count the maximum occurence of k-mers in the nucleotides.
 from tqdm import tqdm
 
 
-def frequent_words(f: str):
+def frequent_words(f: str = None, txt: str = None, k_str: str | int = None):
     frequency_patterns = []
-
-    with open(f) as file:
-        data = file.read()
-        print(data)
-        txt, k_str = data.strip().split("\n")
-        k = int(k_str)
-        freq_map = frequency_table(txt, k)
-        print(freq_map)
-        max_val = max_map(freq_map)
-        for pattern, cnt in freq_map.items():
-            if cnt == max_val:
-                frequency_patterns.append(pattern)
+    if f is not None:
+        with open(f) as file:
+            data = file.read()
+            print(data)
+            txt, k_str = data.strip().split("\n")
+    k = int(k_str)
+    freq_map = frequency_table(txt, k)
+    print(freq_map)
+    max_val = max_map(freq_map)
+    for pattern, cnt in freq_map.items():
+        if cnt == max_val:
+            frequency_patterns.append(pattern)
     print(frequency_patterns)
     return frequency_patterns
 
@@ -27,7 +27,7 @@ def frequency_table(txt: str, k: int):
     freq_map = {}
     n = len(txt)
 
-    for i in range(n - k):
+    for i in range(n - k + 1):
         pattern = txt[i : i + k]
         if pattern not in freq_map:
             freq_map[pattern] = 1
