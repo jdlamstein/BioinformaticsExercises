@@ -24,4 +24,6 @@ def count_nucleotide_g_c(f: str):
 
 if __name__ == "__main__":
     f = "/Users/gandalf/Code/BioinformaticsExercises/Data/dataset_30277_10_4.txt"
+    g = "/Users/gandalf/Code/BioinformaticsExercises/Data/skew.txt"
     count_nucleotide_g_c(f)
+    count_nucleotide_g_c(g)

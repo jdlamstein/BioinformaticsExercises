@@ -23,7 +23,16 @@ def hamming_distance_list(a: str, b: str):
     return [int(x != y) for x, y in zip(a, b)]
 
 
+def hamming_distance(a: str, b: str):
+    # Count mismatches
+    return sum([int(x != y) for x, y in zip(a, b)])
+
+
 if __name__ == "__main__":
     f = "/Users/gandalf/Downloads/ApproximatePatternMatching/inputs/input_2.txt"
     g = "/Users/gandalf/Downloads/dataset_30278_4_3.txt"
-    fuzzy_matching(g)
+    # fuzzy_matching(g)
+
+    a = "CTACAGCAATACGATCATATGCGGATCCGCAGTGGCCGGTAGACACACGT"
+    b = "CTACCCCGCTGCTCAATGACCGGGACTAAAGAGGCGAAGATTATGGTGTG"
+    print(sum(hamming_distance_list(a, b)))

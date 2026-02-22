@@ -120,5 +120,8 @@ def replace_nucleotide(src_pattern: list, neighborhood: list, d: int):
 
 if __name__ == "__main__":
     f = "/Users/gandalf/Downloads/dataset_30278_10.txt"
-    res = run_frequent_words_with_mismatch_and_reverse_complement(f)
-    print(res)
+    # res = run_frequent_words_with_mismatch_and_reverse_complement(f)
+    patterns, _ = frequent_words_with_mismatch(text="ACGT", k=4, d=3)
+    print(patterns)
+    pattern_lst = patterns.strip().split(' ')
+    print(len(pattern_lst))

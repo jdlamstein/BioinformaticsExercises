@@ -3,7 +3,7 @@ from Chapter_1.frequent_words import frequent_words, frequency_table
 
 def count_fuzzy_matches(text: str, target_pattern: str, d: int):
     freq_map = frequency_table(txt=text, k=len(target_pattern))
-    print(freq_map)
+    # print(freq_map)
     frequent_fuzzy_words = {}
 
     # check fuzzy matching
@@ -72,11 +72,15 @@ def test():
 
 
 if __name__ == "__main__":
-    text = "AACAAGCTGATAAACATTTAAAGAG"
-    pattern = "AAAAA"
-    d = 2
+    # text = "AACAAGCTGATAAACATTTAAAGAG"
+    # pattern = "AAAAA"
+    # d = 2
     # test()
     # count_fuzzy_matches(text=text, target_pattern=pattern, d=d)
     # f = "/Users/gandalf/Downloads/ApproximatePatternCount/inputs/input_1.txt"
     f = "/Users/gandalf/Downloads/dataset_30278_6_8.txt"
-    approximate_pattern_count(f)
+    # approximate_pattern_count(f)
+    text = 'CGTGACAGTGTATGGGCATCTTT'
+    pattern = 'TGT'
+    d=1
+    print(count_fuzzy_matches(text=text, target_pattern=pattern, d=d))
